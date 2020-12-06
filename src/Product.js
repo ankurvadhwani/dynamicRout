@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 function Pro() {
   let url = "https://eonet.sci.gsfc.nasa.gov/api/v2.1/categories";
@@ -11,10 +12,19 @@ function Pro() {
   }, [url]);
 
   console.log(product);
-
   if (product) {
-    return <p>fetched</p>;
+    return (
+      <div>
+        <h1>{product.title}</h1>
+        <br />
+        <h3>{product.description}</h3>
+      </div>
+    );
   }
-  return <p>fetching</p>;
+  return (
+    <div>
+      <CircularProgress color="secondary" />
+    </div>
+  );
 }
 export default Pro;
