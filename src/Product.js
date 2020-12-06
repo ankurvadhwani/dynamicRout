@@ -10,6 +10,11 @@ function Pro() {
     });
   }, [url]);
 
-  return <p>product</p>;
+  console.log(product);
+
+  if (product) {
+    return <p>fetched</p>;
+  }
+  return <p>fetching</p>;
 }
 export default Pro;
