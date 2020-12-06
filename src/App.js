@@ -1,12 +1,18 @@
 import React from "react";
 import "./styles.css";
-import { Route } from "react-router-dom";
+import Product from "./Product";
+import { Route, Switch } from "react-router-dom";
 
+function Home() {
+  return <h1>Home</h1>;
+}
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <Switch>
+        <Route path="/" exact component={Home}></Route>
+        <Route path="/product:id" component={Product}></Route>
+      </Switch>
     </div>
   );
 }
