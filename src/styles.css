@@ -2,3 +2,19 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.box {
+  width: 33vw;
+  height: 300px;
+  border-radius: 13px;
+  background: linear-gradient(45deg, red 4%, lightblue 90%);
+}
+
+.box h3 {
+  padding: 5% 5%;
+  color: white;
+}
+.box p {
+  text-align: justify;
+  padding: 3%;
+}

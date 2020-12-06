@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Box from "./components/Box";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 function Pro() {
@@ -11,19 +12,24 @@ function Pro() {
     });
   }, [url]);
 
-  console.log(product);
   if (product) {
+    let { categories } = product;
+    console.log(categories[0]);
+
     return (
-      <div>
-        <h1>{product.title}</h1>
-        <br />
-        <h3>{product.description}</h3>
-      </div>
+      // <Box
+      //   title={categories[0].title}
+      //   description={categories[0].description}
+      // />
+      categories.map((data) => {
+        return <Box title={data.title} description={data.description} />;
+      })
     );
   }
   return (
     <div>
-      <CircularProgress color="secondary" />
+      {/* <CircularProgress color="secondary" /> */}
+      hello
     </div>
   );
 }
